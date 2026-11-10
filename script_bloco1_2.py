@@ -1,13 +1,7 @@
 """
-===============================================================================
-TDE ESTATÍSTICA - DIAGNÓSTICO APROFUNDADO DA BASE PRF (2017–2025)
-===============================================================================
-Perfil: Desenvolvedor (David Watylla Tavares de Oliveira - Matrícula: 20251180322)
-Escopo: 
   - Bloco 1: Ingestão programática dos 9 arquivos, contagens brutas e teste 
              matemático de cardinalidade.
   - Bloco 2: Mapeamento e padronização de strings de ausência/nulos.
-===============================================================================
 """
 
 import os
@@ -24,9 +18,7 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S"
 )
 
-# -----------------------------------------------------------------------------
 # 1. MAPEAMENTO DE PADRÕES E CONFIGURAÇÕES
-# -----------------------------------------------------------------------------
 
 MISSING_STRINGS: List[str] = [
     "", " ", "  ", "ignorado", "não informado", "nao informado",
@@ -36,10 +28,7 @@ MISSING_STRINGS: List[str] = [
 POSSIBLE_ENCODINGS: List[str] = ["latin1", "iso-8859-1", "utf-8", "cp1252"]
 POSSIBLE_DELIMITERS: List[str] = [";", ","]
 
-
-# -----------------------------------------------------------------------------
 # 2. BLOCO 1: FUNÇÕES DE INGESTÃO E CARDINALIDADE
-# -----------------------------------------------------------------------------
 
 def carregar_arquivo_prf(caminho_arquivo: str) -> pd.DataFrame:
     """
@@ -143,10 +132,7 @@ def analisar_cardinalidade(df: pd.DataFrame) -> Dict[str, int]:
     
     return metricas
 
-
-# -----------------------------------------------------------------------------
 # 3. BLOCO 2: MAPEAMENTO E PADRONIZAÇÃO DE COMPLETUDE (NULOS)
-# -----------------------------------------------------------------------------
 
 def mapear_strings_ausencia(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -197,10 +183,7 @@ def padronizar_ausencias(df: pd.DataFrame) -> pd.DataFrame:
     logging.info("Padronização de ausências finalizada com sucesso.")
     return df_clean
 
-
-# -----------------------------------------------------------------------------
 # 4. EXECUÇÃO PRINCIPAL E REPRODUTIBILIDADE
-# -----------------------------------------------------------------------------
 
 def executar_pipeline_desenvolvedor(diretorio_dados: str, diretorio_saida: str):
     """
