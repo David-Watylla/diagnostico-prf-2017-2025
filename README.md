@@ -37,6 +37,44 @@ Documentação técnica do script programático de ingestão, auditoria relacion
 
 ---
 
+## ⚙️ Pré-requisitos & Configuração do Ambiente
+
+## 1. Requisitos do Sistema
+* Python 3.10 ou superior
+* Visual Studio Code (VS Code)
+
+## 2. Instalação das Dependências
+```bash
+# Criação do ambiente virtual
+python -m venv .venv
+
+# Ativação do venv (Windows PowerShell)
+.\.venv\Scripts\Activate.ps1
+
+# Ativação do venv (macOS/Linux)
+source .venv/bin/activate
+
+# Instalação dos pacotes
+pip install -r requirements.txt
+
+```
+
+## 🚀 Como Executar o Pipeline
+
+Etapa 1: Organização dos Arquivos de Entrada
+Certifique-se de que os 9 arquivos CSV da PRF referentes aos anos de 2017 a 2025 estejam descompactados dentro do diretório ./dados_prf_brutos/. Se você baixou os arquivos .zip do portal oficial para a pasta de Downloads, execute o utilitário:
+
+```Bash
+python organizar_zips.py
+```
+
+Etapa 2: Execução do Script de Ingestão e Tratamento
+Rode o script principal para processar os dados e gerar os relatórios diagnósticos:
+
+```Bash
+python script_bloco1_2.py
+```
+
 ## 📂 Arquitetura de Diretórios do Projeto
 
 ```text
