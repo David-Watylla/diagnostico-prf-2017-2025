@@ -1,0 +1,2 @@
+total_linhas_brutas,acidentes_unicos,veiculos_unicos,pessoas_unicas,unidade_analise_detectada,regra_cardinalidade_valida
+4070595,632716,1191476,4070595,Veículo por Acidente,True
